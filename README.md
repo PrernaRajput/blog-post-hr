@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Blog Post App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React application that allows users to create, display, and delete blog posts.
 
-## Available Scripts
+✨ Features
+Create blog posts with a title and description.
 
-In the project directory, you can run:
+    Posts are displayed in a grid layout.
 
-### `npm start`
+    Posts can be deleted individually.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Input fields are cleared automatically after a post is created.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    "Create" button is disabled if either input is empty.
 
-### `npm test`
+🛠️ Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Prerequisites
+        Node.js (v14 or above recommended)
+        npm or yarn
 
-### `npm run build`
+    Installation
+        Clone the repository or create the app using create-react-app:
+        npx create-react-app blog-post
+        cd blog-post
+        Replace the contents of App.js and related components with the blog post functionality.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Install dependencies if needed:
+        npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Start the development server:
+        npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    🧪 Testing
+        Ensure all unit tests pass by running:
+        npm test
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Folder Structure
+        css
+        src/
+        ├── components/
+        │   └── BlogPost.js
+        ├── App.js
+        ├── App.css
+        └── index.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🚀 Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    Enter a title and description in the input fields.
+    Click "Create" to add the post.
+    Posts appear in a grid layout below the inputs.
+    Click "Delete" on a post to remove it.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Head over to `src/components/` to get started.
