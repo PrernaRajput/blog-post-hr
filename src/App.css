@@ -32,7 +32,9 @@ textarea:focus {
 .gap-10 {
   gap: 10px;
 }
-
+.d-flex {
+  justify-content: space-around;
+}
 .post-box {
   background-color: #f0f0f0;
   border: 1px solid #ccc;

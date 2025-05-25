@@ -6,11 +6,17 @@ function Home () {
     const [records, setRecords] = useState( [] );
     const [title, setTitle] = useState( "" );
     const [description, setDescription] = useState( "" );
-
+    let [id ,setId]= useState( 0 );
+    
     const addPost = () => {
         if ( title.trim() !== "" && description.trim() !== "" ) {
-            const newRecord = { title, description };
+            const newRecord = {
+                id,
+                title,
+                description
+            };
             setRecords( [...records, newRecord] );
+            setId(++id);
             setTitle( "" );
             setDescription( "" );
         }

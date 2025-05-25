@@ -9,8 +9,8 @@ const title = "Blog Post";
 const App = () => {
     return (
         <div className="App">
-            <nav class="navbar navbar-light bg-light">
-                <div class="navbar" href="#">
+            <nav className="navbar navbar-light bg-light">
+                <div className="navbar" href="#">
                     <img src="/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" />
                     {title}
                 </div>

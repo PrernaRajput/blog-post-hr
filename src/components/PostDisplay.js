@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 const PostDisplay = ( props ) => {
     const { records } = props;
     const deletePost = ( payload ) => {
-        const found = records.filter( item => item.title !== payload.title );
+        const found = records.filter( item => item.id !== payload.id );
         props.setRecords( found );
     }
     return (
