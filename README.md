@@ -1,4 +1,5 @@
 # Blog Post App
+https://prernarajput.github.io/blog-post-hr/
 
 A simple React application that allows users to create, display, and delete blog posts.
 
