@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/devblog-engine/static/css/main.a93b1294.css",
-    "main.js": "/devblog-engine/static/js/main.388a3452.js",
-    "stencil-polyfills-dom.js": "/devblog-engine/static/js/stencil-polyfills-dom.0bd929e5.chunk.js",
-    "stencil-polyfills-core-js.js": "/devblog-engine/static/js/stencil-polyfills-core-js.225b1082.chunk.js",
-    "stencil-polyfills-css-shim.js": "/devblog-engine/static/js/stencil-polyfills-css-shim.0fea6db6.chunk.js",
-    "stencil-h8k-logo_2-entry-js.js": "/devblog-engine/static/js/stencil-h8k-logo_2-entry-js.1239d776.chunk.js",
-    "index.html": "/devblog-engine/index.html",
-    "main.a93b1294.css.map": "/devblog-engine/static/css/main.a93b1294.css.map",
-    "main.388a3452.js.map": "/devblog-engine/static/js/main.388a3452.js.map",
-    "stencil-polyfills-dom.0bd929e5.chunk.js.map": "/devblog-engine/static/js/stencil-polyfills-dom.0bd929e5.chunk.js.map",
-    "stencil-polyfills-core-js.225b1082.chunk.js.map": "/devblog-engine/static/js/stencil-polyfills-core-js.225b1082.chunk.js.map",
-    "stencil-polyfills-css-shim.0fea6db6.chunk.js.map": "/devblog-engine/static/js/stencil-polyfills-css-shim.0fea6db6.chunk.js.map",
-    "stencil-h8k-logo_2-entry-js.1239d776.chunk.js.map": "/devblog-engine/static/js/stencil-h8k-logo_2-entry-js.1239d776.chunk.js.map"
+    "main.css": "/blog-post-hr/static/css/main.a93b1294.css",
+    "main.js": "/blog-post-hr/static/js/main.ccec9692.js",
+    "stencil-polyfills-dom.js": "/blog-post-hr/static/js/stencil-polyfills-dom.0bd929e5.chunk.js",
+    "stencil-polyfills-core-js.js": "/blog-post-hr/static/js/stencil-polyfills-core-js.225b1082.chunk.js",
+    "stencil-polyfills-css-shim.js": "/blog-post-hr/static/js/stencil-polyfills-css-shim.0fea6db6.chunk.js",
+    "stencil-h8k-logo_2-entry-js.js": "/blog-post-hr/static/js/stencil-h8k-logo_2-entry-js.1239d776.chunk.js",
+    "index.html": "/blog-post-hr/index.html",
+    "main.a93b1294.css.map": "/blog-post-hr/static/css/main.a93b1294.css.map",
+    "main.ccec9692.js.map": "/blog-post-hr/static/js/main.ccec9692.js.map",
+    "stencil-polyfills-dom.0bd929e5.chunk.js.map": "/blog-post-hr/static/js/stencil-polyfills-dom.0bd929e5.chunk.js.map",
+    "stencil-polyfills-core-js.225b1082.chunk.js.map": "/blog-post-hr/static/js/stencil-polyfills-core-js.225b1082.chunk.js.map",
+    "stencil-polyfills-css-shim.0fea6db6.chunk.js.map": "/blog-post-hr/static/js/stencil-polyfills-css-shim.0fea6db6.chunk.js.map",
+    "stencil-h8k-logo_2-entry-js.1239d776.chunk.js.map": "/blog-post-hr/static/js/stencil-h8k-logo_2-entry-js.1239d776.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a93b1294.css",
-    "static/js/main.388a3452.js"
+    "static/js/main.ccec9692.js"
   ]
 }
