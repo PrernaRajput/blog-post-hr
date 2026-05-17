@@ -1,3 +1,8 @@
+@import "../node_modules/h8k-design/dist/index.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   box-sizing: border-box !important;
 }
