@@ -2,10 +2,7 @@ const DB_NAME = "devBlogDB";
 const STORE_NAME = "posts";
 const DB_VERSION = 1;
 
-/* =========================================================
-   OPEN DB
-========================================================= */
-
+//open db
 export const openDB = () => {
   return new Promise((resolve, reject) => {
     const request = indexedDB.open(DB_NAME, DB_VERSION);
@@ -29,10 +26,7 @@ export const openDB = () => {
     };
   });
 };
-
-/* =========================================================
-   GET ALL POSTS
-========================================================= */
+//get all posts
 
 export const getPosts = async () => {
   const db = await openDB();
@@ -54,9 +48,7 @@ export const getPosts = async () => {
   });
 };
 
-/* =========================================================
-   ADD POST
-========================================================= */
+//add posts
 
 export const addPostToDB = async (post) => {
   const db = await openDB();
@@ -78,10 +70,7 @@ export const addPostToDB = async (post) => {
   });
 };
 
-/* =========================================================
-   DELETE POST
-========================================================= */
-
+//dellete posts
 export const deletePostFromDB = async (postId) => {
   const db = await openDB();
 
