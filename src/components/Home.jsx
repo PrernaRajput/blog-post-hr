@@ -3,7 +3,7 @@ import Input from "../components/Input";
 import PostDisplay from "../components/PostDisplay";
 import { usePosts } from "../hooks/usePosts";
 
-const Home = () => {
+const Home = ({setSelectedPost}) => {
     const {
         records, title, setTitle, description,
         setDescription, addPost, deletePost
@@ -41,7 +41,7 @@ const Home = () => {
                         No posts available. Your feed is currently empty.
                     </div>
                 ) : (
-                    <PostDisplay records={records} setRecords={deletePost} />
+                        <PostDisplay records={records} deletePost={deletePost} setSelectedPost={setSelectedPost} />
                 )}
             </section>
         </main>

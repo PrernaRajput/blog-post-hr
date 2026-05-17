@@ -26,7 +26,6 @@ textarea {
 button {
   color: #2e4163;
   height: unset !important;
-  background-color: #caa5d5;
   box-shadow: unset;
 }
 
@@ -53,4 +52,34 @@ textarea:focus {
   min-width: fit-content;
   flex: 1;
   box-sizing: border-box;
+}
+
+.ql-snow {
+  /* SIZE PICKER ONLY */
+  .ql-picker.ql-size {
+    .ql-picker-label[data-value="8px"]::before,
+    .ql-picker-item[data-value="8px"]::before {
+      content: "8px";
+    }
+
+    .ql-picker-label[data-value="12px"]::before,
+    .ql-picker-item[data-value="12px"]::before {
+      content: "12px";
+    }
+
+    .ql-picker-label[data-value="14px"]::before,
+    .ql-picker-item[data-value="14px"]::before {
+      content: "14px";
+    }
+
+    .ql-picker-label[data-value="16px"]::before,
+    .ql-picker-item[data-value="16px"]::before {
+      content: "16px";
+    }
+
+    .ql-picker-label[data-value="24px"]::before,
+    .ql-picker-item[data-value="24px"]::before {
+      content: "24px";
+    }
+  }
 }

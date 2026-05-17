@@ -9,7 +9,7 @@ function Input( {
 } ) {
 
     const handleDescriptionChange = ( payload ) => {
-        setDescription( payload.value );
+        setDescription( payload );
     };
 
     return (
@@ -27,7 +27,7 @@ function Input( {
                     id='blog-title'
                     className='p-2 border rounded focus:ring-2 focus:ring-blue-600 outline-none'
                     type='text'
-                    placeholder='e.g., Understanding React Hooks'
+                    placeholder='e.g.,This Is Probably a Brilliant Headline'
                     value={title}
                     onChange={( e ) => setTitle( e.target.value )}
                     data-testid='title-input'
@@ -47,7 +47,7 @@ function Input( {
                 <TextEditor
                     name='blog-desc'
                     value={description}
-                    placeholder='Write your insights here...'
+                    placeholder='A compelling summary will appear here once inspiration or caffeine arrive.'
                     onChange={handleDescriptionChange}
                     data-testid='description-input'
                     config={{

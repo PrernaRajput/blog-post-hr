@@ -1,12 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "h8k-components";
 import Home from "./components/Home";
+import BlogDetails from "./components/BlogDetails";
+import { usePosts } from "./hooks/usePosts";
 
 const title = "Blog Post";
 
 const App = () => {
+      const {
+            records, deletePost
+      } = usePosts();
+     const [selectedPost, setSelectedPost] = useState(null);
     return (
         <div className="App">
             <nav className="navbar navbar-light bg-light">
@@ -15,7 +21,20 @@ const App = () => {
                     {title}
                 </div>
             </nav>
-            <Home />
+            {
+                selectedPost ? (
+                    <BlogDetails
+                        selectedPost={selectedPost}
+                        onBack={() => setSelectedPost(null)}
+                    />
+                ) : (
+                    <Home
+                        records={records}
+                        deletePost={deletePost}
+                        setSelectedPost={setSelectedPost}
+                    />
+                )
+            }
         </div>
     );
 };

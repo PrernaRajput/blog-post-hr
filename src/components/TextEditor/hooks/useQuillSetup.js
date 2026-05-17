@@ -15,7 +15,7 @@ const useQuillSetup = () => {
         Quill.register( SpanBlock );
 
         const SizeStyle = Quill.import( 'attributors/style/size' );
-        SizeStyle.whitelist = [ '8px', '12px', '14px', '16px' ];
+        SizeStyle.whitelist = [ '8px', '12px', '14px', '16px', '24px' ];
 
         Quill.register( SizeStyle, true );
 

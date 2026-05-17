@@ -32,7 +32,7 @@ export const getToolbarModules = ({
         return false;
     }
 
-    class SpanBlock extends Quill.import('blots/inline') {
+    class SpanBlock extends Quill.import('blots/block') {
         static create() {
             const node = super.create();
             node.setAttribute('class', 'ql-editor__spanBlock');
