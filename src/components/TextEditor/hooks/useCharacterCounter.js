@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { stripHtmlTags } from '../utils/stripHtmlTags';
+import { stripHtmlTags } from '../../../utils/stripHtmlTags';
 
 const useCharacterCounter = ( value = '' ) => {
 
