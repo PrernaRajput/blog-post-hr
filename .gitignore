@@ -5,13 +5,14 @@
 /package_lock.json
 /.pnp
 .pnp.js
-
+node_modules/.cache
 # testing
 /coverage
 
 # production
 /build
-
+.cache
+.eslintcache
 # misc
 .DS_Store
 .env.local
