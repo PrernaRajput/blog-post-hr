@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+const isValidString = ( value ) =>
+    typeof value === 'string' && value.trim();
+
 export const usePosts = () => {
     const [records, setRecords] = useState([]);
     const [title, setTitle] = useState("");
@@ -7,12 +10,24 @@ export const usePosts = () => {
     const [id, setId] = useState(0);
 
     const addPost = () => {
-        if (title.trim() && description.trim()) {
-            const newRecord = { id, title, description, date: new Date().toLocaleDateString() };
+        const safeTitle = title || '';
+        const safeDescription = description || '';
+
+        if ( isValidString( title ) && isValidString( description ) ) {
+
+            const newRecord = {
+                id,
+                title: safeTitle,
+                description: safeDescription,
+                date: new Date().toLocaleDateString(),
+            };
+
             setRecords([...records, newRecord]);
-            setId(prevId => prevId + 1);
-            setTitle("");
-            setDescription("");
+
+            setId((prevId) => prevId + 1);
+
+            setTitle('');
+            setDescription('');
         }
     };
 

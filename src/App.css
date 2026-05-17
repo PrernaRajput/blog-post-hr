@@ -2,6 +2,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "react-quill-new/dist/quill.snow.css";
 
 * {
   box-sizing: border-box !important;
@@ -24,12 +25,17 @@ textarea {
 
 button {
   color: #2e4163;
+  height: unset !important;
   background-color: #caa5d5;
-  box-shadow: 0 4px 12px #351140;
+  box-shadow: unset;
 }
 
 button:hover {
-  box-shadow: 0 4px 12px #f0beff;
+  box-shadow: unset;
+}
+
+button.ql-spanBlock::after {
+  content: "▣";
 }
 textarea:focus {
   outline: 1px solid #2e4163;

@@ -1,0 +1,434 @@
+.lib-text-editor {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  /* =========================================================
+       REACT QUILL WRAPPER
+    ========================================================= */
+
+  &__reactQuill {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border: none;
+    overflow: auto;
+
+    &--error {
+      border: 1px solid #ff2323;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+
+      &:focus-within {
+        border-color: #ff2323;
+      }
+
+      .ql-toolbar.ql-snow {
+        border: none;
+        border-bottom: 1px solid #d7f2ff;
+      }
+
+      .ql-container.ql-snow {
+        border: none;
+      }
+    }
+
+    &--readOnly {
+      .ql-container.ql-snow.ql-disabled {
+        background-color: #fafafa;
+        border-radius: 4px;
+      }
+    }
+
+    &--withSignature {
+      .ql-container.ql-snow {
+        border-bottom: none;
+        border-radius: 0;
+      }
+    }
+  }
+
+  /* =========================================================
+       FOOTER
+    ========================================================= */
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    padding: 0 15px 15px;
+
+    border: 1px solid #dbdbdb;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__reactQuill--error + &__footer {
+    border-color: #ff2323;
+  }
+
+  &__char-limit {
+    display: flex;
+    justify-content: flex-end;
+
+    color: #8e8e8e;
+    font-size: 12px;
+    font-family: "Ubuntu-Regular", sans-serif;
+    line-height: 18px;
+
+    &--error {
+      color: #ff2323;
+    }
+  }
+
+  &__banner {
+    width: 100%;
+
+    color: #8e8e8e;
+    font-size: 12px;
+    font-family: "Ubuntu-Regular", sans-serif;
+    line-height: 18px;
+  }
+
+  &__signature {
+    img,
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  /* =========================================================
+       ROOT STATES
+    ========================================================= */
+
+  &--readOnly {
+    background-color: #fafafa;
+
+    .ql-editor {
+      p {
+        color: #8e8e8e;
+      }
+    }
+  }
+
+  &--withoutBorder {
+    .ql-container.ql-snow {
+      border: none;
+      padding: 16px;
+    }
+
+    .ql-toolbar.ql-snow {
+      border: none;
+      border-bottom: 1px solid #dbdbdb;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &--withFooter {
+    .ql-container.ql-snow {
+      border-bottom: none;
+      border-radius: 0;
+      padding-bottom: 8px;
+    }
+
+    .ql-container.ql-snow.ql-disabled {
+      border-radius: 0;
+    }
+  }
+
+  /* =========================================================
+       TOOLBAR
+    ========================================================= */
+
+  .ql-toolbar.ql-snow {
+    padding: 7px 11px;
+
+    background-color: #ffffff;
+
+    border-color: #dbdbdb;
+    border-radius: 4px 4px 0 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    button {
+      width: 28px;
+      height: 28px;
+    }
+
+    .ql-picker-label {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .ql-formats {
+      .ql-line-height.ql-picker {
+        width: 60px;
+      }
+
+      .ql-file-upload {
+        cursor: pointer;
+      }
+    }
+  }
+
+  /* =========================================================
+       CONTAINER
+    ========================================================= */
+
+  .ql-container.ql-snow {
+    position: relative;
+
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: #ffffff;
+
+    border-color: #dbdbdb;
+    border-radius: 0 0 4px 4px;
+
+    overflow: hidden;
+
+    .lib-field-label {
+      position: absolute;
+      left: 16px;
+
+      color: #bababa;
+
+      cursor: text;
+      pointer-events: none;
+    }
+  }
+
+  /* =========================================================
+       EDITOR
+    ========================================================= */
+
+  .ql-editor {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 180px;
+    max-height: 400px;
+    overflow-y: auto;
+
+    padding: 0;
+
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    p {
+      font-size: 12px !important;
+      line-height: 18px;
+      font-family: "Ubuntu-Regular", sans-serif;
+
+      color: #282828;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    &__spanBlock {
+      padding: 16px;
+
+      background-color: #f3f3f3;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+      line-height: 22px;
+      font-family: "Ubuntu-Regular", sans-serif;
+    }
+
+    &--bottom-aligned {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      min-height: 100%;
+
+      &::before {
+        content: "";
+        flex-grow: 1;
+        min-height: 0;
+      }
+
+      > * {
+        flex-shrink: 0;
+      }
+    }
+    &__spanBlock {
+      background-color: globals.$main-bg-app-color;
+      padding: 16px;
+      border-radius: 8px;
+      @include globals.font-body-2-r;
+    }
+  }
+
+  /* =========================================================
+       PLACEHOLDER
+    ========================================================= */
+
+  .ql-blank::before {
+    color: #8e8e8e !important;
+
+    font-size: 12px;
+    line-height: 18px;
+    font-family: "Ubuntu-Regular", sans-serif;
+
+    font-style: normal;
+  }
+
+  .ql-editor.ql-blank {
+    padding-top: 3px;
+  }
+
+  /* =========================================================
+       CUSTOM SPAN BLOCK ICON
+    ========================================================= */
+
+  .ql-spanBlock {
+    width: 12px !important;
+    height: 12px !important;
+
+    background: #f3f3f3 !important;
+
+    border: 2px solid #444 !important;
+    border-radius: 1px !important;
+  }
+
+  /* =========================================================
+       SIZE PICKER
+    ========================================================= */
+
+  $sizes: (
+    "9px": (
+      label: "Small",
+      font: 9px,
+    ),
+    "12px": (
+      label: "Normal",
+      font: 12px,
+    ),
+    "14px": (
+      label: "Large",
+      font: 14px,
+    ),
+    "16px": (
+      label: "Huge",
+      font: 16px,
+    ),
+  );
+
+  @each $value, $config in $sizes {
+    .ql-snow
+      .ql-picker.ql-size
+      .ql-picker-label[data-value="#{$value}"]::before {
+      content: map-get($config, label);
+    }
+
+    .ql-snow
+      .ql-picker.ql-size
+      .ql-picker-item[data-value="#{$value}"]::before {
+      content: map-get($config, label);
+      font-size: map-get($config, font) !important;
+    }
+  }
+
+  /* =========================================================
+       LINE HEIGHT PICKER
+    ========================================================= */
+
+  $lineHeights: "12px", "16px", "22px", "24px";
+
+  @each $height in $lineHeights {
+    .ql-toolbar
+      .ql-picker.ql-line-height
+      .ql-picker-item[data-value="#{$height}"]::before {
+      content: $height;
+    }
+
+    .ql-toolbar
+      .ql-picker.ql-line-height
+      .ql-picker-label[data-value="#{$height}"]::before {
+      content: $height;
+    }
+  }
+
+  /* =========================================================
+       FONT PICKER
+    ========================================================= */
+
+  .ql-toolbar
+    .ql-picker.ql-font
+    .ql-picker-item[data-value="Ubuntu-Regular"]::before {
+    content: "Ubuntu-Regular";
+  }
+
+  .ql-toolbar
+    .ql-picker.ql-font
+    .ql-picker-label[data-value="Ubuntu-Regular"]::before {
+    content: "Ubuntu";
+  }
+
+  /* Defined size labels with fixed pixel values */
+  .ql-snow {
+    /* SIZE PICKER ONLY */
+    .ql-picker.ql-size {
+      .ql-picker-label[data-value="8px"]::before,
+      .ql-picker-item[data-value="8px"]::before {
+        content: "8px";
+      }
+
+      .ql-picker-label[data-value="12px"]::before,
+      .ql-picker-item[data-value="12px"]::before {
+        content: "12px";
+      }
+
+      .ql-picker-label[data-value="14px"]::before,
+      .ql-picker-item[data-value="14px"]::before {
+        content: "14px";
+      }
+
+      .ql-picker-label[data-value="16px"]::before,
+      .ql-picker-item[data-value="16px"]::before {
+        content: "16px";
+      }
+
+      .ql-picker-label[data-value="24px"]::before,
+      .ql-picker-item[data-value="24px"]::before {
+        content: "24px";
+      }
+    }
+  }
+  .ql-toolbar {
+    .ql-spanBlock::before {
+      content: "SB";
+
+      font-size: 10px;
+      font-weight: 600;
+    }
+  }
+}

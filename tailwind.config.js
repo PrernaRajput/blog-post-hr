@@ -17,7 +17,7 @@ module.exports = {
       lineClamp: {
         3: '3',
       },
-      // Custom typography scale for technical blog posts
+      // Custom typography scale for blog posts
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['Fira Code', 'monospace'],
