@@ -1,32 +1,68 @@
 import React from "react";
 import Input from "../components/Input";
 import PostDisplay from "../components/PostDisplay";
-import { usePosts } from "../hooks/usePosts";
 
-const Home = ({setSelectedPost}) => {
-    const {
-        records, title, setTitle, description,
-        setDescription, addPost, deletePost
-    } = usePosts();
+const Home = ({
+    records,
+    title,
+    setTitle,
+    description,
+    setDescription,
+    addPost,
+    deletePost,
+    setSelectedPost,
+}) => {
 
     return (
-        // Inside Home.js return...
-        <main className="container mx-auto p-6" id="main-content">
-            <header className="text-center mb-12">
-                <h1 className="text-4xl font-extrabold text-gray-900">DevBlog</h1>
-            </header>
+        <main className="min-h-screen px-6 py-10" id="main-content">
 
-            <section className="max-w-xl mx-auto bg-white p-8 shadow-lg rounded-xl mb-12 border border-gray-200" aria-labelledby="form-heading">
-                <h2 id="form-heading" className="text-xl font-semibold mb-4 text-gray-800">Create New Post</h2>
+            <section className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center mb-20">
+
+                <div>
+                    <p className="uppercase tracking-[0.3em] text-sm font-bold mb-4">
+                        Editorial blogging platform
+                    </p>
+
+                    <h1 className="text-6xl font-black leading-none mb-6 text-gray-900">
+                        Write stories
+                        <br />
+                        worth reading.
+                    </h1>
+
+                    <p className="text-xl leading-9 max-w-xl text-gray-800">
+                        Create beautiful technical articles, developer journals,
+                        tutorials, and product stories with a playful modern editor.
+                    </p>
+                </div>
+
+                <div className="hero-illustration flex items-center justify-center">
+                    <div className="bg-white border-[3px] border-black rounded-3xl p-10 rotate-[-4deg] shadow-2xl">
+                        <div className="text-7xl">📝</div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                className="max-w-4xl mx-auto form-shell p-8 mb-20"
+                aria-labelledby="form-heading"
+            >
+                <h2
+                    id="form-heading"
+                    className="text-3xl font-black mb-8 text-gray-900"
+                >
+                    Create New Post
+                </h2>
+
                 <Input
                     setTitle={setTitle}
                     title={title}
                     description={description}
                     setDescription={setDescription}
                 />
+
                 <button
                     data-testid="create-button"
-                    className="w-full mt-6 bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded shadow-md focus:ring-4 focus:ring-blue-300 transition-all"
+                    className="publish-btn w-full mt-8"
                     onClick={addPost}
                     aria-disabled={!title || !description}
                 >
@@ -34,14 +70,41 @@ const Home = ({setSelectedPost}) => {
                 </button>
             </section>
 
-            <section aria-label="Recent Posts">
-                <h2 className="text-2xl font-bold mb-6 border-b-2 border-gray-200 pb-2">Feed</h2>
+            <section
+                aria-label="Recent Posts"
+                className="max-w-6xl mx-auto"
+            >
+                <div className="flex items-center justify-between mb-8">
+                    <h2 className="text-4xl font-black text-gray-900">
+                        Latest Posts
+                    </h2>
+
+                    <div className="bg-black text-white rounded-full px-5 py-2 font-bold">
+                        {records.length} Articles
+                    </div>
+                </div>
+
                 {records.length === 0 ? (
-                    <div role="status" className="text-center py-10 text-gray-500 border-2 border-dashed rounded-lg">
-                        No posts available. Your feed is currently empty.
+                    <div
+                        role="status"
+                        className="editor-shell text-center py-20 px-8"
+                    >
+                        <div className="text-6xl mb-6">📚</div>
+
+                        <h3 className="text-3xl font-black mb-4">
+                            No posts yet
+                        </h3>
+
+                        <p className="text-lg text-gray-700">
+                            Your beautifully written articles will appear here.
+                        </p>
                     </div>
                 ) : (
-                        <PostDisplay records={records} deletePost={deletePost} setSelectedPost={setSelectedPost} />
+                    <PostDisplay
+                        records={records}
+                        deletePost={deletePost}
+                        setSelectedPost={setSelectedPost}
+                    />
                 )}
             </section>
         </main>

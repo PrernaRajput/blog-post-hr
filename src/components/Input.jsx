@@ -13,21 +13,20 @@ function Input( {
     };
 
     return (
-        <div className='flex flex-col gap-4'>
-            {/* Title */}
+        <div className='flex flex-col gap-6'>
             <div className='flex flex-col'>
                 <label
                     htmlFor='blog-title'
-                    className='mb-1 text-sm font-semibold text-gray-700'
+                    className='mb-3 text-sm font-black uppercase tracking-[0.15em] text-gray-700'
                 >
-                    Post Title <span aria-hidden='true'>*</span>
+                    Post Title
                 </label>
 
                 <input
                     id='blog-title'
-                    className='p-2 border rounded focus:ring-2 focus:ring-blue-600 outline-none'
+                    className='blog-input'
                     type='text'
-                    placeholder='e.g.,This Is Probably a Brilliant Headline'
+                    placeholder='Write a headline people remember'
                     value={title}
                     onChange={( e ) => setTitle( e.target.value )}
                     data-testid='title-input'
@@ -35,19 +34,18 @@ function Input( {
                 />
             </div>
 
-            {/* Description */}
             <div className='flex flex-col'>
                 <label
                     htmlFor='blog-desc'
-                    className='mb-1 text-sm font-semibold text-gray-700'
+                    className='mb-3 text-sm font-black uppercase tracking-[0.15em] text-gray-700'
                 >
-                    Content <span aria-hidden='true'>*</span>
+                    Content
                 </label>
 
                 <TextEditor
                     name='blog-desc'
                     value={description}
-                    placeholder='A compelling summary will appear here once inspiration or caffeine arrive.'
+                    placeholder='Craft an article worth sharing with the world.'
                     onChange={handleDescriptionChange}
                     data-testid='description-input'
                     config={{

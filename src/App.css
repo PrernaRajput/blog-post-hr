@@ -5,81 +5,158 @@
 @import "react-quill-new/dist/quill.snow.css";
 
 * {
-  box-sizing: border-box !important;
-}
-.navbar {
-  gap: 8px;
-  padding: 6px !important;
+  box-sizing: border-box;
 }
 
-.app-header {
-  background: black !important;
-  display: flex !important;
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f4c62f;
+  color: #111827;
 }
 
-textarea {
-  height: 100px;
-  width: 100% !important;
-  padding: 8px;
+.App {
+  min-height: 100vh;
+  background: #f4c62f;
 }
 
 button {
-  color: #2e4163;
   height: unset !important;
+  transition: all 0.2s ease;
   box-shadow: unset;
 }
 
 button:hover {
+  transform: translateY(-1px);
   box-shadow: unset;
 }
 
 button.ql-spanBlock::after {
   content: "▣";
 }
-textarea:focus {
-  outline: 1px solid #2e4163;
-}
-.gap-10 {
-  gap: 10px;
-}
-.d-flex {
-  justify-content: space-around;
-}
-.post-box {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  padding: 10px;
-  min-width: fit-content;
-  flex: 1;
-  box-sizing: border-box;
+
+.hero-card {
+  background: #f4c62f;
+  border-radius: 36px;
 }
 
-.ql-snow {
-  /* SIZE PICKER ONLY */
-  .ql-picker.ql-size {
-    .ql-picker-label[data-value="8px"]::before,
-    .ql-picker-item[data-value="8px"]::before {
-      content: "8px";
-    }
+.hero-illustration {
+  background: #e9a3df;
+  border: 3px solid #111827;
+  border-radius: 42% 58% 62% 38% / 38% 43% 57% 62%;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
 
-    .ql-picker-label[data-value="12px"]::before,
-    .ql-picker-item[data-value="12px"]::before {
-      content: "12px";
-    }
+.hero-illustration::before {
+  content: "✦";
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #111827;
+}
 
-    .ql-picker-label[data-value="14px"]::before,
-    .ql-picker-item[data-value="14px"]::before {
-      content: "14px";
-    }
+.hero-illustration::after {
+  content: "✎";
+  position: absolute;
+  bottom: 24px;
+  left: 32px;
+  font-size: 52px;
+  color: #111827;
+}
 
-    .ql-picker-label[data-value="16px"]::before,
-    .ql-picker-item[data-value="16px"]::before {
-      content: "16px";
-    }
+.blog-card {
+  background: #fffdf7;
+  border: 3px solid #111827;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 #111827;
+}
 
-    .ql-picker-label[data-value="24px"]::before,
-    .ql-picker-item[data-value="24px"]::before {
-      content: "24px";
-    }
-  }
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-card-accent {
+  height: 14px;
+  background: #e9a3df;
+  border-bottom: 3px solid #111827;
+}
+
+.editor-shell,
+.form-shell {
+  background: #fffdf7;
+  border: 3px solid #111827;
+  border-radius: 28px;
+  box-shadow: 10px 10px 0 #111827;
+}
+
+.blog-input {
+  width: 100%;
+  border: 2px solid #111827;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.blog-input:focus {
+  outline: none;
+  border-color: #e9a3df;
+  box-shadow: 0 0 0 4px rgba(233, 163, 223, 0.35);
+}
+
+.publish-btn {
+  background: #111827;
+  color: #fff;
+  border-radius: 14px;
+  font-weight: 700;
+  padding: 14px 18px;
+  border: 2px solid #111827;
+}
+
+.publish-btn:hover {
+  background: #e9a3df;
+  color: #111827;
+}
+
+.expand-btn {
+  background: #e9a3df;
+  border: 2px solid #111827;
+  color: #111827;
+}
+
+.delete-btn {
+  background: #fff;
+  border: 2px solid #111827;
+  color: #111827;
+}
+
+.expand-btn,
+.delete-btn {
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+.ql-toolbar.ql-snow {
+  border: 2px solid #111827;
+  border-bottom: 0;
+  border-radius: 16px 16px 0 0;
+  background: #fff7fb;
+}
+
+.ql-container.ql-snow {
+  border: 2px solid #111827;
+  border-radius: 0 0 16px 16px;
+  background: white;
+}
+
+.ql-editor {
+  min-height: 180px;
+}
+
+.prose-preview img {
+  max-width: 100%;
 }

@@ -6,21 +6,21 @@ import Home from "./components/Home";
 import BlogDetails from "./components/BlogDetails";
 import { usePosts } from "./hooks/usePosts";
 
-const title = "Blog Post";
-
 const App = () => {
-      const {
-            records, deletePost
-      } = usePosts();
-     const [selectedPost, setSelectedPost] = useState(null);
+    const {
+        records,
+        title,
+        setTitle,
+        description,
+        setDescription,
+        addPost,
+        deletePost,
+    } = usePosts();
+
+    const [selectedPost, setSelectedPost] = useState(null);
+
     return (
         <div className="App">
-            <nav className="navbar navbar-light bg-light">
-                <div className="navbar" href="#">
-                    <img src="/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" />
-                    {title}
-                </div>
-            </nav>
             {
                 selectedPost ? (
                     <BlogDetails
@@ -30,6 +30,11 @@ const App = () => {
                 ) : (
                     <Home
                         records={records}
+                        title={title}
+                        setTitle={setTitle}
+                        description={description}
+                        setDescription={setDescription}
+                        addPost={addPost}
                         deletePost={deletePost}
                         setSelectedPost={setSelectedPost}
                     />

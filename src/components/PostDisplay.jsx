@@ -10,7 +10,7 @@ const PostDisplay = ({
     return (
         <div
             data-testid="posts-container"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
             role="region"
             aria-live="polite"
             aria-label="Blog posts feed"
@@ -18,23 +18,25 @@ const PostDisplay = ({
             {records.map((item) => (
                 <article
                     key={item.id}
-                    className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 flex flex-col"
+                    className="blog-card flex flex-col"
                     aria-labelledby={`title-${item.id}`}
                 >
-                    <div className="p-5 grow">
-                        <time className="text-xs font-bold text-blue-600 uppercase">
+                    <div className="blog-card-accent" />
+
+                    <div className="p-7 grow flex flex-col">
+                        <time className="text-xs font-black tracking-[0.2em] text-gray-700 uppercase">
                             {item.date}
                         </time>
 
                         <h3
                             id={`title-${item.id}`}
-                            className="text-xl font-bold mt-2 text-gray-900"
+                            className="text-3xl font-black mt-4 text-gray-900 leading-tight"
                         >
                             {item.title}
                         </h3>
 
                         <div
-                            className="text-gray-600 mt-3 overflow-hidden max-h-32"
+                            className="prose-preview text-gray-700 mt-5 overflow-hidden max-h-40 leading-7"
                             dangerouslySetInnerHTML={{
                                 __html: DOMPurify.sanitize(
                                     item.description
@@ -43,23 +45,21 @@ const PostDisplay = ({
                         />
                     </div>
 
-                    <div className="p-4 bg-gray-50 border-t flex justify-between gap-3">
-                        {/* Expand Button */}
+                    <div className="p-5 border-t-[3px] border-black flex justify-between gap-3 bg-white">
                         <button
-                            className="text-blue-700 hover:bg-blue-50 px-3 py-2 rounded text-sm font-bold transition-colors border border-blue-200"
+                            className="expand-btn"
                             onClick={() => setSelectedPost(item)}
                             aria-label={`Expand post: ${item.title}`}
                         >
-                            Expand Blog
+                            Read Article
                         </button>
 
-                        {/* Delete Button */}
                         <button
-                            className="text-red-700 hover:bg-red-50 px-3 py-2 rounded text-sm font-bold transition-colors border border-red-200"
+                            className="delete-btn"
                             onClick={() => deletePost(item.id)}
                             aria-label={`Delete post: ${item.title}`}
                         >
-                            Delete Post
+                            Delete
                         </button>
                     </div>
                 </article>
