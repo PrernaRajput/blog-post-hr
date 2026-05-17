@@ -2,7 +2,7 @@
   "name": "blog-post-hr",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PrernaRajput.github.io/devblog-engine",
+  "homepage": "https://PrernaRajput.github.io/blog-post-hr",
   "dependencies": {
     "bootstrap": "^5.3.6",
     "classnames": "^2.5.1",
