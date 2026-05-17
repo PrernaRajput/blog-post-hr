@@ -13,7 +13,7 @@ const Home = ({setSelectedPost}) => {
         // Inside Home.js return...
         <main className="container mx-auto p-6" id="main-content">
             <header className="text-center mb-12">
-                <h1 className="text-4xl font-extrabold text-gray-900">DevBlog Engine</h1>
+                <h1 className="text-4xl font-extrabold text-gray-900">DevBlog</h1>
             </header>
 
             <section className="max-w-xl mx-auto bg-white p-8 shadow-lg rounded-xl mb-12 border border-gray-200" aria-labelledby="form-heading">
